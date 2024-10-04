@@ -1,5 +1,5 @@
 #Identify spots near edges of box and tissue
-identify_edge_spots <- function(coord_path, seurat.obj = NULL,
+identify_edge_spots <- function(coord_path = NULL, seurat.obj = NULL,
                                 search = 'radius', neighbors = 7) {
   #data_dir - directory that has tissue_positions.csv file
   #seurat.obj - matching seurat object
@@ -9,11 +9,11 @@ identify_edge_spots <- function(coord_path, seurat.obj = NULL,
   require(tidyr)
   
   #finds and reads in the data
-  coords <- read.delim(paste(coord_path,
-                             list.files(coord_path)[which(str_detect(
-                               list.files(coord_path),
-                               'tissue_position')==TRUE)], sep = '/'),
-                       header = F, sep = ',')
+    coords <- read.delim(paste(coord_path,
+                               ist.files(coord_path)[which(str_detect(
+                                 list.files(coord_path),
+                                 'tissue_position')==TRUE)], sep = '/'),
+                         header = F, sep = ',')
   colnames(coords) <- c('barcode', 'in_tissue', 'array_row', 'array_col',
                         'pxl_row_in_fullres', 'pxl_col_in_fullres')
   
@@ -81,5 +81,3 @@ identify_edge_spots <- function(coord_path, seurat.obj = NULL,
   
   return(coords)
 }
-
-test <- identify_edge_spots(coord_path)
