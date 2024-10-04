@@ -81,5 +81,3 @@ identify_edge_spots <- function(coord_path, seurat.obj = NULL,
   
   return(coords)
 }
-
-test <- identify_edge_spots(coord_path)
