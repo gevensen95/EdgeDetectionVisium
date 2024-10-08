@@ -1,5 +1,6 @@
 #Identify spots near edges of box and tissue
-identify_edge_spots <- function(coord_path = NULL, seurat.obj = NULL,
+EdgeDetectionVisium <- function(coord_path, seurat.obj = NULL,
+
                                 search = 'radius', neighbors = 7) {
   #data_dir - directory that has tissue_positions.csv file
   #seurat.obj - matching seurat object
